@@ -1,0 +1,32 @@
+server:
+  port: 8085
+
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 16379
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  datasource:
+    url: jdbc:mariadb://localhost:33306/chatting
+    username: root
+    password: 1234
+    driver-class-name: org.mariadb.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation.CorsMapping: DEBUG
