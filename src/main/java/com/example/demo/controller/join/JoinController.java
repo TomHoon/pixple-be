@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequiredArgsConstructor
+@CrossOrigin("*")
 public class JoinController {
 
   private final UserService userservice;
