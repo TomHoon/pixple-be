@@ -10,6 +10,7 @@ import com.example.demo.util.JWTValidator;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,7 +33,7 @@ public class JoinController {
   }
 
   @PostMapping("/join")
-  public Map<String, Object> join(@RequestBody UserDTO dto, HttpServletRequest request) throws Exception {
+  public Map<String, Object> join(@RequestBody UserDTO dto, HttpServletRequest request) throws Throwable {
     String sessionId = request.getSession().getId();
 
     int result = userservice.join(dto);
@@ -56,11 +57,16 @@ public class JoinController {
         "nickname", dto.getNickname());
 
     String token = JWTGenerator.generate(param);
+    Map<String, Object> res = new HashMap<String, Object>();
+    res.put("result", "회원가입성공");
+    res.put("token", token);
+    res.put("resultCode", 100);
 
-    return Map.of(
-        "result", "회원가입성공",
-        "token", token,
-        "resultCode", 100);
+    return res;
+    // return Map.of(
+    // "result", "회원가입성공",
+    // "token", token,
+    // "resultCode", 100);
   }
 
   @PostMapping("/login")
