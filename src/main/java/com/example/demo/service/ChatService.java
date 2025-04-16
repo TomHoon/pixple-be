@@ -35,7 +35,7 @@ public class ChatService {
     message.put("sender", cDTO.getSender());
     message.put("message", cDTO.getContent());
 
-    template.convertAndSend("/topic/" + cDTO.getRoomName(), message.toString().replaceAll("=", ":"));
+    template.convertAndSend("/topic/" + cDTO.getRoomName(), message);
   }
 
   public void saveMessage(ChatDTO cDTO) {

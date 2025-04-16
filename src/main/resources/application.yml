@@ -9,8 +9,8 @@ spring:
 
   data:
     redis:
-      host: localhost
-      port: 16379
+      host: 172.19.0.6
+      port: 6379
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,7 +21,7 @@ spring:
 
   datasource:
     #url: jdbc:mariadb://localhost:33306/chatting
-    url: jdbc:mariadb://172.19.0.2:3306/chatting
+    url: jdbc:mariadb://172.19.0.5:3306/chatting
     username: root
     password: 2846
     driver-class-name: org.mariadb.jdbc.Driver
