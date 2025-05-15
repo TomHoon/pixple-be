@@ -10,6 +10,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker // stomp를 위한것...
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
+  
   @Override
   public void registerStompEndpoints(StompEndpointRegistry registry) {
     registry.addEndpoint("/chat")
@@ -20,6 +21,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
   @Override
   public void configureMessageBroker(MessageBrokerRegistry registry) {
     registry.setApplicationDestinationPrefixes("/app"); // MessageMapping의 prefix // send: /app/room1
-    registry.enableSimpleBroker("/topic"); // subscribe: /topic/room1
+    registry.enableSimpleBroker("/topic", "/queue");
+    // subscribe: /topic/room1
   }
 }

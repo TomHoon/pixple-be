@@ -9,8 +9,8 @@ spring:
 
   data:
     redis:
-      host: 172.19.0.6
-      port: 6379
+      host: tomhoon.duckdns.org
+      port: 16379
   jpa:
     hibernate:
       ddl-auto: update
@@ -21,9 +21,9 @@ spring:
 
   datasource:
     #url: jdbc:mariadb://localhost:33306/chatting
-    url: jdbc:mariadb://172.19.0.5:3306/chatting
+    url: jdbc:mariadb://tomhoon.duckdns.org:13306/chatting
     username: root
-    password: 2846
+    password: 1234
     driver-class-name: org.mariadb.jdbc.Driver
 
 mybatis:

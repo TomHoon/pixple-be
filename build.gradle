@@ -38,6 +38,10 @@ dependencies {
 
 	
 	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+implementation 'org.webjars:webjars-locator-core'
+implementation 'org.webjars:sockjs-client:1.6.1'
+implementation 'org.webjars:stomp-websocket:2.3.4' // 최신 버전 확인 필요
 }
 
 tasks.named('test') {
