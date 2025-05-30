@@ -7,7 +7,8 @@ public class MoveMessage {
     private String id;
     private double x;
     private double y;
-    private String name; 
+    private String name;
+    private String skill;
     // 필요하다면 String name; 등 다른 속성 추가
 
     // Getters and Setters
@@ -19,13 +20,15 @@ public class MoveMessage {
     public void setY(double y) { this.y = y; }
     public String getName() { return name; } // Getter 추가
     public void setName(String name) { this.name = name; } // Setter 추가
-
+    public String getSkill() { return skill; }
+    public void setSkill(String skill) { this.skill = skill; }
     // 생성자
-    public MoveMessage(String id, double x, double y, String name) {
+    public MoveMessage(String id, double x, double y, String name, String skill) {
         this.id = id;
         this.x = x;
         this.y = y;
         this.name = name;
+        this.skill = skill;
     }
 
     // 기본 생성자 (Jackson이 역직렬화 시 필요)
